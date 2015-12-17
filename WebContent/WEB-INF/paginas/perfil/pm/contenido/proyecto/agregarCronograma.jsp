@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="/WEB-INF/Libreria.tld" %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 
+<s:actionmessage/>
 
 	<div class="row-fluid sortable">
 		<div class="box span12">
@@ -13,7 +14,7 @@
 			</div>
 			
 			<div class="box-content">
-				<form class="form-horizontal" action="registrarProyecto" namespace="/proyecto">
+				<form class="form-horizontal" action="terminarRegistroProyecto" namespace="/proyecto" method="post">
 					<fieldset>
 						<!-- tabla fase1 -->
 						<div class="control-group">
@@ -21,7 +22,7 @@
 							<div class="box-header">
 								<h2><i class="halflings-icon white align-justify"></i><span class="break"></span>Analisis</h2>
 								<div class="box-icon">
-									<a href="#" id="botonForm"><i class="halflings-icon white wrench"></i></a>
+									<a href="#" id="botonForm" data-toggle="modal" data-target="#modalAnalisis"><i class="halflings-icon white wrench"></i></a>
 								</div>
 							</div>
 							<div class="box-content">
@@ -72,7 +73,7 @@
 							<div class="box-header">
 								<h2><i class="halflings-icon white align-justify"></i><span class="break"></span>Diseno</h2>
 								<div class="box-icon">
-									<a href="#" id="botonForm2"><i class="halflings-icon white wrench"></i></a>
+									<a href="#" id="botonForm2" data-toggle="modal" data-target="#modalDiseno"><i class="halflings-icon white wrench"></i></a>
 								</div>
 							</div>
 							<div class="box-content">
@@ -123,7 +124,7 @@
 							<div class="box-header">
 								<h2><i class="halflings-icon white align-justify"></i><span class="break"></span>Desarrollo</h2>
 								<div class="box-icon">
-									<a href="#" id="botonForm3"><i class="halflings-icon white wrench"></i></a>
+									<a href="#" id="botonForm3" data-toggle="modal" data-target="#modalDesarrollo"><i class="halflings-icon white wrench"></i></a>
 								</div>
 							</div>
 							<div class="box-content">
@@ -174,7 +175,7 @@
 							<div class="box-header">
 								<h2><i class="halflings-icon white align-justify"></i><span class="break"></span>Pruebas</h2>
 								<div class="box-icon">
-									<a href="#" id="botonForm4"><i class="halflings-icon white wrench"></i></a>
+									<a href="#" id="botonForm4" data-toggle="modal" data-target="#modalPruebas"><i class="halflings-icon white wrench"></i></a>
 								</div>
 							</div>
 							<div class="box-content">
@@ -221,7 +222,9 @@
 						</div>
 						
 						<div class="form-actions">
-							<button type="submit" class="btn btn-primary">Guardar</button>
+							<button type="submit" class="btn" data-noty-options="{&quot;text&quot;:&quot;Se agrego el cronograma&quot;,&quot;layout&quot;:&quot;topLeft&quot;,&quot;type&quot;:&quot;success&quot;}">
+								Terminar
+							</button>
 							<button type="reset" class="btn">Cancel</button>
 						</div>
 					</fieldset>
@@ -230,7 +233,7 @@
 		</div>
 		<!--/span-->
 	</div>
-
+<!------------------------------------------------------------------------------------->
 <!-- Modal Analisis -->
 	<div class="modal hide fade" id="modalAnalisis">
 		<div class="modal-header">
@@ -243,7 +246,7 @@
 					<div class="control-group">
 						<label class="control-label" for="typeahead">Descripcion</label>
 						<div class="controls">
-							<input type="text" name="atarea.des" class="span6 typeahead" id="typeahead">
+							<input type="text" name="atarea.des" class="span6 typeahead" id="typeahead" data-error="Debe ingresar la descripcion" required>
 						</div>
 					</div>
 				
@@ -263,23 +266,23 @@
 					</div>
 					
 					<div class="control-group">
-						<label class="control-label" for="date01">Fecha Fin Privado</label>
+						<label class="control-label" for="date02">Fecha Fin Privado</label>
 						<div class="controls">
-								<input name="atarea.fechafinpu" type="text" class="input-xlarge datepicker" id="date01" value="02/16/2015">
+								<input name="atarea.fechafinpu" type="text" class="input-xlarge datepicker" id="date02" value="02/16/2015">
 						</div>
 					</div>
 					
 					<div class="control-group">
-						<label class="control-label" for="date01">Fecha Inicio Publico</label>
+						<label class="control-label" for="date03">Fecha Inicio Publico</label>
 						<div class="controls">
-							<input type="text" name="atarea.fechainiciopr" class="input-xlarge datepicker" id="date01" value="02/16/2015">
+							<input type="text" name="atarea.fechainiciopr" class="input-xlarge datepicker" id="date03" value="02/16/2015">
 						</div>
 					</div>
 					
 					<div class="control-group">
-						<label class="control-label" for="date01">Fecha Fin Publico</label>
+						<label class="control-label" for="date04">Fecha Fin Publico</label>
 						<div class="controls">
-								<input type="text" name="atarea.fechafinpr" class="input-xlarge datepicker" id="date01" value="02/16/2015">
+								<input type="text" name="atarea.fechafinpr" class="input-xlarge datepicker" id="date04" value="02/16/2015">
 						</div>
 					</div>
 					
@@ -288,7 +291,7 @@
 						<input type="reset" data-dismiss="modal" class="btn botonCerrar" value="Cancelar"/>
 					</div>
 				</fieldset>
-			</form>		
+			</form>
 		</div>
 	</div>
 	
@@ -304,7 +307,7 @@
 					<div class="control-group">
 						<label class="control-label" for="typeahead">Descripcion</label>
 						<div class="controls">
-							<input type="text" name="atarea.des" class="span6 typeahead" id="typeahead">
+							<input type="text" name="atarea.des" class="span6 typeahead" id="typeahead" data-error="Debe ingresar la descripcion" required>
 						</div>
 					</div>
 				
@@ -319,28 +322,28 @@
 					<div class="control-group">
 						<label class="control-label" for="date01">Fecha Inicio Privado</label>
 						<div class="controls">
-							<input name="atarea.fechainiciopu" type="text" class="input-xlarge datepicker" id="date01" value="02/16/2015">
+							<input name="atarea.fechainiciopu" type="text" class="input-xlarge datepicker" id="date05" value="02/16/2015">
 						</div>
 					</div>
 					
 					<div class="control-group">
 						<label class="control-label" for="date01">Fecha Fin Privado</label>
 						<div class="controls">
-								<input name="atarea.fechafinpu" type="text" class="input-xlarge datepicker" id="date01" value="02/16/2015">
+								<input name="atarea.fechafinpu" type="text" class="input-xlarge datepicker" id="date06" value="02/16/2015">
 						</div>
 					</div>
 					
 					<div class="control-group">
 						<label class="control-label" for="date01">Fecha Inicio Publico</label>
 						<div class="controls">
-							<input type="text" name="atarea.fechainiciopr" class="input-xlarge datepicker" id="date01" value="02/16/2015">
+							<input type="text" name="atarea.fechainiciopr" class="input-xlarge datepicker" id="date07" value="02/16/2015">
 						</div>
 					</div>
 					
 					<div class="control-group">
 						<label class="control-label" for="date01">Fecha Fin Publico</label>
 						<div class="controls">
-								<input type="text" name="atarea.fechafinpr" class="input-xlarge datepicker" id="date01" value="02/16/2015">
+								<input type="text" name="atarea.fechafinpr" class="input-xlarge datepicker" id="date08" value="02/16/2015">
 						</div>
 					</div>
 					
@@ -348,8 +351,9 @@
 						<input type="submit" class="btn btn-primary" value="Agregar"/>
 						<input type="reset" data-dismiss="modal" class="btn botonCerrar" value="Cancelar"/>
 					</div>
+					
 				</fieldset>
-			</form>		
+			</form>	
 		</div>
 	</div>
 		<!-- Modal Desarrollo -->
@@ -364,7 +368,7 @@
 					<div class="control-group">
 						<label class="control-label" for="typeahead">Descripcion</label>
 						<div class="controls">
-							<input type="text" name="atarea.des" class="span6 typeahead" id="typeahead">
+							<input type="text" name="atarea.des" class="span6 typeahead" id="typeahead" data-error="Debe ingresar la descripcion" required>
 						</div>
 					</div>
 				
@@ -379,28 +383,28 @@
 					<div class="control-group">
 						<label class="control-label" for="date01">Fecha Inicio Privado</label>
 						<div class="controls">
-							<input name="atarea.fechainiciopu" type="text" class="input-xlarge datepicker" id="date01" value="02/16/2015">
+							<input name="atarea.fechainiciopu" type="text" class="input-xlarge datepicker" id="date09" value="02/16/2015">
 						</div>
 					</div>
 					
 					<div class="control-group">
 						<label class="control-label" for="date01">Fecha Fin Privado</label>
 						<div class="controls">
-								<input name="atarea.fechafinpu" type="text" class="input-xlarge datepicker" id="date01" value="02/16/2015">
+								<input name="atarea.fechafinpu" type="text" class="input-xlarge datepicker" id="date10" value="02/16/2015">
 						</div>
 					</div>
 					
 					<div class="control-group">
 						<label class="control-label" for="date01">Fecha Inicio Publico</label>
 						<div class="controls">
-							<input type="text" name="atarea.fechainiciopr" class="input-xlarge datepicker" id="date01" value="02/16/2015">
+							<input type="text" name="atarea.fechainiciopr" class="input-xlarge datepicker" id="date11" value="02/16/2015">
 						</div>
 					</div>
 					
 					<div class="control-group">
 						<label class="control-label" for="date01">Fecha Fin Publico</label>
 						<div class="controls">
-								<input type="text" name="atarea.fechafinpr" class="input-xlarge datepicker" id="date01" value="02/16/2015">
+								<input type="text" name="atarea.fechafinpr" class="input-xlarge datepicker" id="date12" value="02/16/2015">
 						</div>
 					</div>
 					
@@ -408,8 +412,9 @@
 						<input type="submit" class="btn btn-primary" value="Agregar"/>
 						<input type="reset" data-dismiss="modal" class="btn botonCerrar" value="Cancelar"/>
 					</div>
+					
 				</fieldset>
-			</form>		
+			</form>	
 		</div>
 	</div>
 		<!-- Modal Pruebas -->
@@ -424,7 +429,7 @@
 					<div class="control-group">
 						<label class="control-label" for="typeahead">Descripcion</label>
 						<div class="controls">
-							<input type="text" name="atarea.des" class="span6 typeahead" id="typeahead">
+							<input type="text" name="atarea.des" class="span6 typeahead" id="typeahead" data-error="Debe ingresar la descripcion" required>
 						</div>
 					</div>
 				
@@ -439,28 +444,28 @@
 					<div class="control-group">
 						<label class="control-label" for="date01">Fecha Inicio Privado</label>
 						<div class="controls">
-							<input name="atarea.fechainiciopu" type="text" class="input-xlarge datepicker" id="date01" value="02/16/2015">
+							<input name="atarea.fechainiciopu" type="text" class="input-xlarge datepicker" id="date13" value="02/16/2015">
 						</div>
 					</div>
 					
 					<div class="control-group">
 						<label class="control-label" for="date01">Fecha Fin Privado</label>
 						<div class="controls">
-								<input name="atarea.fechafinpu" type="text" class="input-xlarge datepicker" id="date01" value="02/16/2015">
+								<input name="atarea.fechafinpu" type="text" class="input-xlarge datepicker" id="date14" value="02/16/2015">
 						</div>
 					</div>
 					
 					<div class="control-group">
 						<label class="control-label" for="date01">Fecha Inicio Publico</label>
 						<div class="controls">
-							<input type="text" name="atarea.fechainiciopr" class="input-xlarge datepicker" id="date01" value="02/16/2015">
+							<input type="text" name="atarea.fechainiciopr" class="input-xlarge datepicker" id="date15" value="02/16/2015">
 						</div>
 					</div>
 					
 					<div class="control-group">
 						<label class="control-label" for="date01">Fecha Fin Publico</label>
 						<div class="controls">
-								<input type="text" name="atarea.fechafinpr" class="input-xlarge datepicker" id="date01" value="02/16/2015">
+								<input type="text" name="atarea.fechafinpr" class="input-xlarge datepicker" id="date16" value="02/16/2015">
 						</div>
 					</div>
 					
@@ -469,8 +474,8 @@
 						<input type="reset" data-dismiss="modal" class="btn botonCerrar" value="Cancelar"/>
 					</div>
 				</fieldset>
-			</form>		
+			</form>
 		</div>
 	</div>
 	
-	<div class="modal-backdrop fade hide" id="fondoModal"></div>
+	<!--  <div class="modal-backdrop fade hide" id="fondoModal"></div>-->
