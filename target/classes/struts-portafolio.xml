@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="struts-portafolio" extends="pmpro" namespace="/portafolio">
+
+		<!-- Action PM -->
+		<action name="registrarPortafolio"
+			class="com.pro.proyectospro.negocio.struts.PortafolioAction" method="registrar">
+			<result type="tiles">d_pmIndex</result>
+			<result name="input" type="tiles">d_pmIndex</result>
+		</action>
+
+		<action name="infoPortafolio"
+			class="com.pro.proyectospro.negocio.struts.PortafolioAction" method="proyectosXPortafolio">
+			<result type="tiles">d_infoPortafolio</result>
+		</action>
+
+		<action name="editarPortafolioDes"
+			class="com.pro.proyectospro.negocio.struts.PortafolioAction" method="editarPortafolioDes">
+			<result type="tiles">d_infoPortafolio</result>
+		</action>
+		<!-- Action PM -->
+
+
+		<!-- Action Supervisor -->
+		<action name="infoPortafolioSup"
+			class="com.pro.proyectospro.negocio.struts.PortafolioAction" method="proyectosXPortafolio">
+			<result type="tiles">d_infoPortafolioSup</result>
+		</action>
+
+		<!-- Action Supervisor -->
+
+
+	</package>
+</struts>
+        
+     

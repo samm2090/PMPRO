@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib>
+	<tlibversion>1.0</tlibversion>
+	<jspversion>1.0</jspversion>
+	<shortname>Custom Tags</shortname>
+	<!-- definicion de las etiquetas -->
+	<tag>
+		<name>cboPortafolios</name>
+		<tagclass>com.pro.proyectospro.configuracion.tag.CboPortafolios
+		</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info>Carga el combo de portafolios</info>
+	</tag>
+	<tag>
+		<name>cboRecursos</name>
+		<tagclass>com.pro.proyectospro.configuracion.tag.CboRecursos
+		</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info>Lista los recursos en un cbo</info>
+	</tag>
+	<tag>
+		<name>menuPortafolio</name>
+		<tagclass>com.pro.proyectospro.configuracion.tag.MenuPortafolio
+		</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info>Lista de portafolios en el menu</info>
+	</tag>
+	<tag>
+		<name>MenuPortafolioSupervisor</name>
+		<tagclass>com.pro.proyectospro.configuracion.tag.MenuPortafolioSupervisor
+		</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info>Lista de portafolios en el menu</info>
+	</tag>
+	<tag>
+		<name>cboEstado</name>
+		<tagclass>com.pro.proyectospro.configuracion.tag.CboEstado
+		</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info>Lista de estados</info>
+	</tag>
+
+	<tag>
+		<name>menuPortafolioRecurso</name>
+		<tagclass>com.pro.proyectospro.configuracion.tag.MenuPortafolioRecurso
+		</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info>Lista de portafolio x recurso</info>
+		<attribute>
+			<name>codigo</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>area</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+</taglib>

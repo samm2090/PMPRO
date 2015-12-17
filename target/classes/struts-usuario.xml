@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="struts-usuario" extends="pmpro" namespace="/usuario">
+
+		<action name="iniciarSesion"
+			class="com.pro.proyectospro.negocio.struts.SeguridadAction" method="iniciarSesion">
+			<result name="gerente" type="tiles">d_gerenteIndex</result>
+			<result name="pm" type="tiles">d_pmIndex</result>
+			<result name="supervisor" type="tiles">d_supervisorIndex</result>
+			<result name="administrador" type="tiles">d_administradorIndex
+			</result>
+			<result name="recurso" type="tiles">d_recIndex</result>
+			<result name="error">/WEB-INF/paginas/login/login.jsp</result>
+		</action>
+
+		<action name="cerrarSesion"
+			class="com.pro.proyectospro.negocio.struts.SeguridadAction" method="cerrarSesion">
+			<result>/WEB-INF/paginas/login/login.jsp</result>
+		</action>
+
+	</package>
+</struts>

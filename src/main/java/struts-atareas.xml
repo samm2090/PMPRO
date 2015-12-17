@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="struts-atareas" extends="pmpro" namespace="/atareas">
+	
+		<action name="formAgregarTarea" class="com.pro.proyectospro.negocio.struts.AtareaAction"
+			method="obtenerTareasxAreaxRecurso">
+			<result type="tiles">d_listarAtareas</result>
+			<result type="tiles" name="input">d_listarAtareas</result>
+		</action>
+		
+		<action name="comenzarTarea" class="com.pro.proyectospro.negocio.struts.AtareaAction"
+			method="comenzarTarea">
+			<result type="tiles">d_listarAtareas</result>
+			<result type="tiles" name="input">d_listarAtareas</result>
+		</action>
+		
+		<action name="terminarTarea" class="com.pro.proyectospro.negocio.struts.AtareaAction"
+			method="terminarTarea">
+			<result type="tiles">d_listarAtareas</result>
+			<result type="tiles" name="input">d_listarAtareas</result>
+		</action>
+		
+	</package>
+</struts>

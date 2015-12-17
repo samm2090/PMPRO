@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="struts-proyecto" extends="pmpro" namespace="/proyecto">
+
+		<!-- Action PM -->
+		<action name="infoProyecto"
+			class="com.pro.proyectospro.negocio.struts.ProyectoAction" method="buscarProyecto">
+			<result type="tiles">d_infoProyecto</result>
+		</action>
+
+		<action name="listarTareas"
+			class="com.pro.proyectospro.negocio.struts.ProyectoAction" method="listarTareas">
+			<result type="tiles">d_asignarRecurso</result>
+		</action>
+
+		<action name="formAgregarProyecto">
+			<result type="tiles">d_agregarProyecto</result>
+		</action>
+
+		<action name="registrarTarea"
+			class="com.pro.proyectospro.negocio.struts.ProyectoAction" method="registrarATarea">
+			<result type="tiles">d_agregarCronograma</result>
+			<result type="tiles" name="input">d_agregarCronograma</result>
+		</action>
+
+		<action name="registrarProyecto"
+			class="com.pro.proyectospro.negocio.struts.ProyectoAction" method="registrar">
+			<result type="tiles" name="ok">d_agregarCronograma</result>
+			<result type="tiles" name="input">d_agregarCronograma</result>
+		</action>
+
+		<!-- Action PM -->
+
+
+		<!-- Action Supervisor -->
+		<action name="asignarRecurso"
+			class="com.pro.proyectospro.negocio.struts.ProyectoAction" method="asignarRecurso">
+			<result type="tiles">d_tareasSup</result>
+		</action>
+
+		<action name="listarTareasXFaseSup"
+			class="com.pro.proyectospro.negocio.struts.ProyectoAction" method="listarTareasXFaseSup">
+			<result type="tiles">d_tareasSup</result>
+		</action>
+		<!-- Action Supervisor -->
+
+
+	</package>
+</struts>

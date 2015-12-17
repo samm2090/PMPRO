@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration
+2.0//EN" "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+	<definition name="d_plantilla" template="/WEB-INF/paginas/plantillas/plantilla.jsp">
+		<put-attribute name="cabecera" value="/WEB-INF/paginas/perfil/pm/secciones/cabecera.jsp"/>
+		<put-attribute name="menu" value="/WEB-INF/paginas/perfil/pm/secciones/menu.jsp"/>
+		<put-attribute name="contenido" value=""/>	
+		<put-attribute name="pie" value="/WEB-INF/paginas/perfil/pm/secciones/pie.jsp"/>	
+	</definition>
+	
+	
+	
+	<!-- PM -->
+	<definition name="d_pmIndex" extends="d_plantilla">
+		<put-attribute name="contenido" value="/WEB-INF/paginas/perfil/pm/pmIndex.jsp"/>	
+	</definition>
+	
+	<definition name="d_infoPortafolio" extends="d_plantilla">
+		<put-attribute name="contenido" value="/WEB-INF/paginas/perfil/pm/contenido/portafolio/infoPortafolio.jsp"/>	
+	</definition>
+	
+	<definition name="d_infoProyecto" extends="d_plantilla">
+		<put-attribute name="contenido" value="/WEB-INF/paginas/perfil/pm/contenido/proyecto/infoProyecto.jsp"/>	
+	</definition>
+	
+	<definition name="d_agregarProyecto" extends="d_plantilla">
+		<put-attribute name="contenido" value="/WEB-INF/paginas/perfil/pm/contenido/proyecto/registrarProyecto.jsp"/>	
+	</definition>
+	
+	<definition name="d_agregarCronograma" extends="d_plantilla">
+		<put-attribute name="contenido" value="/WEB-INF/paginas/perfil/pm/contenido/proyecto/agregarCronograma.jsp"/>	
+	</definition>
+	<!-- PM -->
+	
+	
+	
+	<definition name="d_gerenteIndex" extends="d_plantilla">
+		<put-attribute name="contenido" value="/WEB-INF/paginas/perfil/gerente/gerenteIndex.jsp"/>	
+	</definition>
+	
+	<definition name="d_administradorIndex" extends="d_plantilla">
+		<put-attribute name="contenido" value="/WEB-INF/paginas/perfil/administrador/administradorIndex.jsp"/>	
+	</definition>
+		
+		
+	
+	<!-- Supervisor -->
+	<definition name="d_plantillaSupervisor" template="/WEB-INF/paginas/plantillas/plantilla.jsp">
+		<put-attribute name="cabecera" value="/WEB-INF/paginas/perfil/supervisor/secciones/cabecera.jsp"/>
+		<put-attribute name="menu" value="/WEB-INF/paginas/perfil/supervisor/secciones/menu.jsp"/>
+		<put-attribute name="contenido" value=""/>	
+		<put-attribute name="pie" value="/WEB-INF/paginas/perfil/supervisor/secciones/pie.jsp"/>	
+	</definition>
+	
+	<definition name="d_supervisorIndex" extends="d_plantillaSupervisor">
+		<put-attribute name="contenido" value="/WEB-INF/paginas/perfil/supervisor/supervisorIndex.jsp"/>	
+	</definition>
+	
+	<definition name="d_infoPortafolioSup" extends="d_plantillaSupervisor">
+		<put-attribute name="contenido" value="/WEB-INF/paginas/perfil/supervisor/contenido/portafolio/infoPortafolio.jsp"/>	
+	</definition>
+	
+	<definition name="d_tareasSup" extends="d_plantillaSupervisor">
+		<put-attribute name="contenido" value="/WEB-INF/paginas/perfil/supervisor/contenido/proyecto/tareasSup.jsp"/>	
+	</definition>
+	<!-- Supervisor -->
+	
+	
+	
+	<!-- Recurso -->
+	<definition name="d_plantillaRecurso" template="/WEB-INF/paginas/plantillas/plantilla.jsp">
+		<put-attribute name="cabecera" value="/WEB-INF/paginas/perfil/recurso/secciones/cabecera.jsp"/>
+		<put-attribute name="menu" value="/WEB-INF/paginas/perfil/recurso/secciones/menu.jsp"/>
+		<put-attribute name="contenido" value=""/>	
+		<put-attribute name="pie" value="/WEB-INF/paginas/perfil/recurso/secciones/pie.jsp"/>	
+	</definition>
+
+	<definition name="d_recIndex" extends="d_plantillaRecurso">
+		<put-attribute name="contenido" value="/WEB-INF/paginas/perfil/recurso/recursoIndex.jsp"/>	
+	</definition>
+	
+	<definition name="d_listarAtareas" extends="d_plantillaRecurso">
+		<put-attribute name="contenido" value="/WEB-INF/paginas/perfil/recurso/contenido/listaTareas.jsp"/>	
+	</definition>
+	<!-- Recurso -->
+
+</tiles-definitions>
+
+
