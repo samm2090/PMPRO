@@ -57,5 +57,13 @@
 			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 	</tag>
+	
+	<tag>
+		<name>cboUrgencia</name>
+		<tagclass>com.pro.proyectospro.configuracion.tag.cboUrgencia
+		</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info>Lista de urgencias</info>
+	</tag>
 
 </taglib>
